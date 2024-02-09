@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 30px;
+  border-top: 2px  solid black;
+  margin: 10px;
+}
+
+.items{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-top: 10px;
+  justify-content: space-around;
+  border: 0.5px dotted rgba(0, 0, 0, 0.193);
+}
+ 
+.items p{
+  padding-top: 10px;
+  margin: 5px 0;
+  text-align: center;
+}
+  
+#price{
+  color: rgb(255, 0, 0);
+}
+  
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 20px 0px;
+}
+.search input{
+  width: 300px;
+}

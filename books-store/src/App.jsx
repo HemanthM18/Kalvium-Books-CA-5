@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import BooksList from './Components/BookList';
-import Register from './Components/Register';
+import BooksList from './Components/Book';
+import Register from './Components/RegisterForm';
 import './App.css';
-import Navbar from './Navbar';
+import Navbar from './assets/Navbar';
 
 const App = () => {
   const [books, setBooks] = useState([]);

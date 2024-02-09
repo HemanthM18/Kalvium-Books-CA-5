@@ -1,52 +1,48 @@
 import React, { useState } from "react";
-import "./Register.css";
+import "./RegisterForm.css";
 
 export default function Form() {
   const [field, setField] = useState({
     firstName: "",
     email: "",
     password: "",
-    confirmPassword: "", // New field for password confirmation
+    confirmPassword: "",
   });
-
+  
   const [submitted, setSubmit] = useState(false);
-  const [validate, setValidation] = useState(false);
-
+  const [check, setCheck] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (field.firstName && field.email && field.password && field.confirmPassword) {
-      // Add password matching validation
       if (field.password === field.confirmPassword) {
-        // Add email format validation
-        if (validateEmail(field.email)) {
-          setValidation(true);
+        if (checkEmail(field.email)) {
+          setCheck(true);
         } else {
-          setValidation(false);
+          setCheck(false);
         }
       } else {
-        setValidation(false);
+        setCheck(false);
       }
     }
     setSubmit(true);
   };
 
-  // Email validation function
-  const validateEmail = (email) => {
+  const checkEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
   };
 
   return (
     <div>
-      <div className="form-container">
-        <form className="register-form" onSubmit={handleSubmit}>
-          {submitted && validate ? (
-            <div className="success-message">Registration successful!</div>
+      <div className="container">
+        <form className="form" onSubmit={handleSubmit}>
+          {submitted && check ? (
+            <div className="success">Registration successful!</div>
           ) : null}
 
           <input
             id="first-name"
-            className="form-field"
+            className="input"
             type="text"
             placeholder="First Name"
             name="firstName"
@@ -59,7 +55,7 @@ export default function Form() {
 
           <input
             id="email"
-            className="form-field"
+            className="input"
             type="text"
             placeholder="Email"
             name="email"
@@ -69,13 +65,13 @@ export default function Form() {
             }}
           />
           {submitted && !field.email ? <span>Please enter your email</span> : null}
-          {submitted && field.email && !validateEmail(field.email) ? (
+          {submitted && field.email && !checkEmail(field.email) ? (
             <span>Please enter a valid email</span>
           ) : null}
 
           <input
             id="password"
-            className="form-field"
+            className="input"
             type="password"
             placeholder="Password"
             name="password"
@@ -88,7 +84,7 @@ export default function Form() {
 
           <input
             id="confirm-password"
-            className="form-field"
+            className="input"
             type="password"
             placeholder="Confirm Password"
             name="confirmPassword"
@@ -101,7 +97,7 @@ export default function Form() {
             <span>Passwords do not match</span>
           ) : null}
 
-          <button className="form-field" type="submit">
+          <button className="input" id="form-button" type="submit">
             Register
           </button>
         </form>

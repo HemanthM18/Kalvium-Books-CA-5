@@ -1,0 +1,38 @@
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.success {
+  font-family: "Roboto", sans-serif;
+  background-color: #03aa00;
+  padding: 15px;
+  color: white;
+}
+
+.container{
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  padding-right: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  background-color: rgba(160, 160, 160, 0.332)
+}
+
+.input {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 16px;
+  border: 10;
+  font-family: "Roboto", sans-serif;
+}
+
+#form-button{
+  margin-top: 10%;
+  padding: 10px;
+}

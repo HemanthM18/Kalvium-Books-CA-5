@@ -1,14 +1,15 @@
 import axios from 'axios';
 
-const API_URL = 'https://reactnd-books-api.udacity.com/books';
-
-export const fetchBooks = async () => {
-  try {
-    const response = await axios.get(API_URL, {
+const api = 'https://reactnd-books-api.udacity.com/books';
+export const fetch = async () => {
+  try{
+    const response = await axios.get(api, {
       headers: { 'Authorization': 'whatever-you-want' }
     });
     return response.data.books;
-  } catch (error) {
+  } 
+  
+  catch(error){
     console.error('Error fetching books:', error);
     throw error;
   }
